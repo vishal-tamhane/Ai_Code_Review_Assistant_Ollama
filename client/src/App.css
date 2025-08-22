@@ -10,6 +10,12 @@ body {
   min-height: 100vh;
 }
 
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 .container {
   background: #fff;
   padding: 2rem;
@@ -20,9 +26,9 @@ body {
 }
 
 h1 {
+  color: #2c3e50;
   text-align: center;
-  color: #1a237e;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-group {
@@ -52,30 +58,55 @@ select:focus, textarea:focus {
 }
 
 textarea {
-  font-family: 'Courier New', Courier, monospace;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-family: monospace;
+  font-size: 14px;
+  resize: vertical;
 }
 
 button {
   display: block;
   width: 100%;
-  padding: 14px;
-  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #fff;
-  background-color: #5c67f2;
+  background-color: #3498db;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #4a54e1;
+  background-color: #2980b9;
 }
 
 button:disabled {
-  background-color: #aeb4de;
+  background-color: #95a5a6;
   cursor: not-allowed;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.language-selector {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.language-selector select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
 }
 
 .response-container {
@@ -96,4 +127,60 @@ button:disabled {
   white-space: pre-wrap;
   word-wrap: break-word;
   line-height: 1.5;
+}
+
+.error-message {
+  padding: 1rem;
+  background-color: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.analysis-results {
+  margin-top: 2rem;
+}
+
+.result-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.result-section h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.result-section pre {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.result-section code {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.server-status {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.status-checking {
+  color: #f39c12;
+}
+
+.status-connected {
+  color: #27ae60;
+}
+
+.status-error {
+  color: #c0392b;
 }
