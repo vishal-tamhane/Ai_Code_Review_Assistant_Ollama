@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 // Enhanced helper function with better error handling
 const formatAnalysisResponse = (response) => {
   try {
-    console.log("Raw response to format:", response); // Debug log
+    // console.log("Raw response to format:", response); // Debug log
 
     const sections = {
       correctness: "",
@@ -99,7 +99,7 @@ ${code}
     }
 
     const data = await ollamaResponse.json();
-    console.log("Ollama response:", data); // Debug log
+    // console.log("Ollama response:", data); // Debug log
 
     if (!data.response) {
       throw new Error("Empty response from Ollama");

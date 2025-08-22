@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -7,35 +7,35 @@ function App() {
   const [analysis, setAnalysis] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [serverStatus, setServerStatus] = useState('checking');
+  // const [serverStatus, setServerStatus] = useState('checking');
 
   const languages = [
     'javascript', 'python', 'java', 'cpp', 'typescript',
     'ruby', 'go', 'rust', 'php', 'csharp'
   ];
 
-  useEffect(() => {
-    checkServerStatus();
-  }, []);
+  // useEffect(() => {
+  //   checkServerStatus();
+  // }, []);
 
-  const checkServerStatus = async () => {
-    try {
-      const response = await fetch('http://localhost:3000/health');
-      if (response.ok) {
-        setServerStatus('connected');
-      } else {
-        setServerStatus('error');
-      }
-    } catch (err) {
-      setServerStatus('error');
-    }
-  };
+  // const checkServerStatus = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:3000/health');
+  //     if (response.ok) {
+  //       setServerStatus('connected');
+  //     } else {
+  //       setServerStatus('error');
+  //     }
+  //   } catch (err) {
+  //     setServerStatus('error');
+  //   }
+  // };
 
   const analyzeCode = async () => {
-    if (serverStatus !== 'connected') {
-      setError('Server is not connected. Please ensure the backend is running.');
-      return;
-    }
+    // if (serverStatus !== 'connected') {
+    //   setError('Server is not connected. Please ensure the backend is running.');
+    //   return;
+    // }
 
     setLoading(true);
     setError(null);
@@ -72,14 +72,14 @@ function App() {
     <div className="app-container">
       <h1>AI Code Review Assistant</h1>
       
-      <div className="server-status">
+      {/* <div className="server-status">
         Status: {' '}
         <span className={`status-${serverStatus}`}>
           {serverStatus === 'checking' ? 'Checking server...' :
            serverStatus === 'connected' ? 'Connected' : 
            'Server not connected'}
         </span>
-      </div>
+      </div> */}
 
       <div className="input-section">
         <div className="language-selector">
